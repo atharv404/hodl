@@ -112,3 +112,13 @@ tmp/
 net2/keys
 hodl/db
 db
+
+# Logs
+logs/
+*.log
+
+# Demo data
+demo_wallets.json
+
+# Vercel
+.vercel

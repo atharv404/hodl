@@ -1,15 +1,38 @@
-flask
-attrs
-sqlalchemy
-werkzeug
-pycryptodome
-json5
-docker
-raven
-mmh3
-twisted
-dpath
-v8-cffi
-python-vagrant
-fabric
-coloredlogs
+# Core Web Framework
+flask>=3.0.0,<4.0.0
+werkzeug>=3.0.0,<4.0.0
+
+# Database
+sqlalchemy>=2.0.0,<3.0.0
+
+# Cryptography
+pycryptodome>=3.19.0
+
+# Data Handling
+attrs>=23.0.0
+json5>=0.9.0
+dpath>=2.0.0
+
+# Utilities
+mmh3>=4.0.0
+coloredlogs>=15.0.0
+
+# Networking (optional - for full node)
+twisted>=24.0.0
+
+# Docker support (optional)
+docker>=7.0.0
+
+# Sentry error tracking (optional)
+raven>=6.10.0
+
+# Smart contract execution (optional - requires libv8)
+# Uncomment if you have libv8 development libraries installed
+# v8-cffi>=0.2.0
+
+# Deployment tools (optional)
+# python-vagrant>=1.0.0
+# fabric>=3.0.0
+
+# Additional dependencies for production
+python-dotenv>=1.0.0  # For environment variable management
