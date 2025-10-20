@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: hodl-blockchain-node
+    env: python
+    region: oregon
+    plan: starter
+    buildCommand: pip install -r requirements.txt && python setup.py install
+    startCommand: python -m hodl.daemon
+    envVars:
+      - key: FLASK_HOST
+        value: 0.0.0.0
+      - key: FLASK_PORT
+        value: 8001
+      - key: FLASK_ENV
+        value: production
+      - key: DATABASE_PATH
+        value: /opt/render/project/src/db/bch.db
+      - key: LOG_LEVEL
+        value: INFO
+      - key: NETWORK
+        value: testnet
+      - key: PYTHONUNBUFFERED
+        value: 1
+    disk:
+      name: hodl-data
+      mountPath: /opt/render/project/src/db
+      sizeGB: 1
+    healthCheckPath: /status

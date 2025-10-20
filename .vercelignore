@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# Git
+.git/
+.gitignore
+.gitmodules
+
+# Tests
+tests/
+*.test.py
+
+# Documentation
+docs/
+*.md
+!README.md
+
+# CI/CD
+.travis.yml
+.github/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+*.tmp
+
+# Environment
+.env
+
+# Docker
+Dockerfile
+docker-compose.yml
+
+# Other deployment configs
+Procfile
+railway.json

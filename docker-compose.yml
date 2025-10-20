@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  hodl-node:
+    build: .
+    container_name: hodl-blockchain
+    ports:
+      - "8001:8001"
+    volumes:
+      - hodl-data:/app/db
+      - hodl-logs:/app/logs
+    environment:
+      - FLASK_HOST=0.0.0.0
+      - FLASK_PORT=8001
+      - DATABASE_PATH=/app/db/bch.db
+      - LOG_LEVEL=INFO
+      - NETWORK=testnet
+    restart: unless-stopped
+    networks:
+      - hodl-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  hodl-data:
+    driver: local
+  hodl-logs:
+    driver: local
+
+networks:
+  hodl-network:
+    driver: bridge

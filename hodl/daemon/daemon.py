@@ -1,9 +1,7 @@
-from flask import *
-from flask_restplus import *
+from flask import Flask
 
 version = "0.1"
 app = Flask(__name__)
-api = Api(app, version=version)
 
 
 class Sender:
